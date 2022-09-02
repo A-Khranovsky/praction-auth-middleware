@@ -8,6 +8,7 @@
 <?php
 
 ?>
+@if(!isset($your_name))
 <form method='post' action="/auth/name">
     @csrf
     Enter your name:<br /><br />
@@ -15,5 +16,9 @@
     <br /><br />
     <input type='submit' value='Send'>
 </form>
+@else
+    Hello, {{$your_name}} <br />
+    <a href="/"> Home </a>
+@endif
 </body>
 </html>
