@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/guest', function(){
@@ -12,5 +12,5 @@ Route::get('/guest', function(){
 })->middleware('my_auth_by_name:guest');
 
 Route::post('/auth/name', function(Request $request){
-    return view('welcome', ['your_name' => $request->your_name]);
+    return view('home', ['your_name' => $request->your_name]);
 })->middleware('my_auth_by_name');

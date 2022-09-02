@@ -22,6 +22,5 @@ class AuthByName
             abort(403);
         }
         return $next($request);
-
     }
 }
