@@ -5,16 +5,14 @@
     <meta charset="utf-8">
 </head>
 <body>
-<?php
-
-?>
 @if(!isset($your_name))
 <form method='post' action="/auth/name">
     @csrf
     Enter your name:<br /><br />
     <input type="text" name="your_name" />
     <br /><br />
-    <input type='submit' value='Send'>
+    <input type='submit' value='Send'><br /><br />
+    <a href="/guest"> I am guest </a>
 </form>
 @else
     Hello, {{$your_name}} <br />
