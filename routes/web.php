@@ -1,16 +1,12 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class, 'home']);
 
-Route::get('/guest', function(){
-    return view('guest', ['your_name' => 'guest']);
-})->middleware('my_auth_by_name:guest');
+Route::get('/guest', [HomeController::class, 'guest'])
+    ->middleware('my_auth_by_name:guest');
 
-Route::post('/auth/name', function(Request $request){
-    return view('home', ['your_name' => $request->your_name]);
-})->middleware('my_auth_by_name');
+Route::post('/auth/name', [HomeController::class, 'auth'])
+    ->middleware('my_auth_by_name');
