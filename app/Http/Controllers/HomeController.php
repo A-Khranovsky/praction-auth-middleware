@@ -13,11 +13,11 @@ class HomeController extends Controller
 
     public function guest()
     {
-       return view('guest', ['your_name' => 'guest']);
+        return view('guest', ['your_name' => 'guest']);
     }
 
     public function auth(Request $request)
     {
-       return view('home', ['your_name' => $request->your_name]);
+        return view('home', ['your_name' => $request->your_name]);
     }
 }

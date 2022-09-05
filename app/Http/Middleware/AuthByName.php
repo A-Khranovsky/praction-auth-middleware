@@ -18,7 +18,7 @@ class AuthByName
     {
         if ($guest == 'guest') {
             return $next($request);
-        } else if ($request->your_name !== 'Alex') {
+        } elseif ($request->your_name !== 'Alex') {
             abort(403);
         }
         return $next($request);
